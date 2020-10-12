@@ -3,7 +3,14 @@
   <div v-for="item in yearEntries" :key="item.photo_url">
     <p>{{item.name}}</p>
     <p>{{item.looks_like}}</p>
-    <img :src='`${item.photo_url}`'/>
+    <router-link
+      :to="`/${year}/lookslike/${item.id}`"
+      :description="item.looks_like"
+      :name="item.name"
+      :image="item.photo_url"
+      :year="year">
+      <img :src='`${item.photo_url}`'/>
+    </router-link>
   </div>
 </template>
 

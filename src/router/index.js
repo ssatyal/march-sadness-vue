@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Year from '../components/Year.vue'
+import LooksLike from '../components/LooksLike.vue'
 
 const routes = [
   {
@@ -20,6 +21,12 @@ const routes = [
     path: '/:year',
     name: 'Year',
     component: Year,
+    props: true,
+  },
+  {
+    path: '/:year/lookslike/:id',
+    name: 'LooksLike',
+    component: LooksLike,
     props: true,
   }
 ]
